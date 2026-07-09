@@ -134,6 +134,8 @@ notes or PDF content after the last line. Press Enter to generate.
 > **Study material follows:**
 >
 > *(paste your notes, markdown content, or extracted PDF text here) and must be generated with exam_data.js file as example*
+> 
+> *you can also change this part "Generate at least 20 questions from the study material I provide below" from the prompt, you can state 100 questions*
 
 ---
 
