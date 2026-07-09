@@ -15,10 +15,10 @@
  */
 
 const examConfig = {
-  title: "Sample Exam Title",
+  title: "DP-800 SQL AI Engineer",
   subtitle: "Certification Review Tool",
   description:
-    "Sample Exam Description",
+    "Practice questions covering Azure Synapse, Delta Lake, T-SQL, and data engineering concepts.",
   passingScore: 70,
   shuffleQuestions: true,
   shuffleOptions: true,
