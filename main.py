@@ -538,7 +538,7 @@ BANNER = r"""
   ║                                                          ║
   ╠══════════════════════════════════════════════════════════╣
   ║                                                          ║
-  ║    URL        : http://localhost:{port:<21s}             ║
+  ║    URL        : http://localhost:{str(port):<21s}        ║
   ║    Directory  : {dir:<39s}                               ║
   ║    exam_data  : {data_status:<39s}                       ║
   ║                                                          ║
