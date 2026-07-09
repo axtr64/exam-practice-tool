@@ -92,3 +92,34 @@ const examQuestions = [
       "CREATE VIEW defines a virtual table based on a SELECT statement. The view definition is stored in the database catalog, but the data itself is not materialized — it is fetched from the underlying base tables each time the view is queried. Views are useful for simplifying complex joins, restricting column-level access for security, and providing a stable interface when underlying table schemas change.",
   },
 ];
+
+/**
+ * Fisher-Yates Shuffle
+ * Runs once on file load. Shuffles question order and option order
+ * based on the flags in examConfig.
+ */
+(function () {
+  function fisherYates(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  if (examConfig.shuffleQuestions) {
+    fisherYates(examQuestions);
+  }
+
+  if (examConfig.shuffleOptions) {
+    examQuestions.forEach((q) => {
+      if (q.type === "multiple-choice" && Array.isArray(q.options)) {
+        const correctLabel = q.correctAnswer;
+        fisherYates(q.options);
+        q.correctAnswer =
+          q.options.find((o) => o === correctLabel) || correctLabel;
+      }
+    });
+  }
+})();
+
