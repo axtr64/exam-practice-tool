@@ -583,7 +583,7 @@ def main():
     signal.signal(signal.SIGTERM, shutdown_handler)
 
     # Print banner
-    print(BANNER.format(port=port, dir=DIRECTORY, data_status=data_status))
+    print(BANNER.format(port=str(port), dir=DIRECTORY, data_status=data_status))
 
     # Open browser after a short delay
     def open_browser():
